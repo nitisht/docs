@@ -8,8 +8,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Parseable Documentation',
   tagline: 'Parseable Log Storage',
-  url: 'https://parseable.io',
-  baseUrl: '/docs/',
+  url: 'https://parseable.io/docs',
+  baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
