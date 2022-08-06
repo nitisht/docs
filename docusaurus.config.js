@@ -9,7 +9,7 @@ const config = {
   title: 'Parseable Documentation',
   tagline: 'Parseable Log Storage',
   url: 'https://parseable.io',
-  baseUrl: '/docs',
+  baseUrl: '/docs/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
