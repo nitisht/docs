@@ -9,15 +9,17 @@ const config = {
   title: 'Parseable Documentation',
   tagline: 'Parseable Log Storage',
   url: 'https://parseable.io',
-  baseUrl: '/',
+  baseUrl: '/docs',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
+  trailingSlash: false,
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'parseablehq', // Usually your GitHub org/user name.
   projectName: 'parseable', // Usually your repo name.
+  deploymentBranch: 'gh-pages', // branch to deploy to when using GitHub pages.
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
