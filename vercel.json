@@ -8,7 +8,7 @@
             "value": "docs.parseable.io"
           }
         ],
-        "destination": "/docs/:path*"
+        "destination": "/docs/:docs*"
       }
     ]
   }
