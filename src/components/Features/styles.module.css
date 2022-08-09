@@ -1,0 +1,104 @@
+.featureContainer {
+  padding-top: 80px;
+}
+
+@media (min-width: 768px) {
+  .featureContainer {
+    padding-top: 112px;
+  }
+}
+
+.headingContainer {
+  color: #fff;
+}
+
+.heading {
+  text-align: center;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+}
+
+.subHeading {
+  text-align: center;
+  margin-top: 16px;
+}
+
+.cardsContainer {
+  margin-top: 48px;
+  width: 100%;
+  gap: 12px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.cardContainer {
+  width: 100%;
+  position: relative;
+  padding: 0 16px;
+  background-color: #fff;
+  height: 176px;
+  border: 1px solid #e5e5e5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardTitle {
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 700;
+  width: 100%;
+}
+
+.cardDescription {
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.cardImage {
+  position: absolute;
+  width: 64px;
+  top: 16px;
+  right: 16px;
+}
+
+.comingSoonHeading {
+  text-align: center;
+  margin-top: 48px;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 700;
+  width: 100%;
+}
+
+.upcomingText {
+    text-align: center;
+    margin-top: 8px;
+    
+}
+
+@media (min-width: 640px) {
+  .cardContainer {
+    height: 224px;
+  }
+  .cardImage {
+    width: 112px;
+  }
+}
+
+@media (min-width: 768px) {
+  .cardsContainer {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .cardTitle {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .comingSoonHeading {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}

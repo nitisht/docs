@@ -5,6 +5,24 @@
  */
 
 /* You can override the default Infima variables here. */
+@import url("https://rsms.me/inter/inter.css");
+html {
+  font-family: "Inter", sans-serif;
+}
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: "Inter var", sans-serif;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
 :root {
   --ifm-color-primary: #2e8555;
   --ifm-color-primary-dark: #29784c;
@@ -18,7 +36,7 @@
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
+[data-theme="dark"] {
   --ifm-color-primary: #25c2a0;
   --ifm-color-primary-dark: #21af90;
   --ifm-color-primary-darker: #1fa588;
@@ -27,4 +45,70 @@
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+.max-w-6xl {
+  width: 100%;
+  max-width: 72rem /* 1152px */;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0.75rem /* 12px */;
+  padding-right: 0.75rem /* 12px */;
+}
+
+@media (min-width: 640px) {
+  .max-w-6xl {
+    padding-left: 1.5rem /* 24px */;
+    padding-right: 1.5rem /* 24px */;
+  }
+}
+@media (min-width: 1024px) {
+  .max-w-6xl {
+    padding-left: 2rem /* 32px */;
+    padding-right: 2rem /* 32px */;
+  }
+}
+
+.h-600 {
+  height: 600px;
+}
+
+/* .active {
+  color: white;
+  border-color: white;
+  border-bottom-width: 4px;
+} */
+
+.h-110 {
+  height: 110%;
+}
+.custom-shadow {
+  box-shadow: 0px -10px 20px #0000001a;
+}
+
+.opacity-10 {
+  opacity: 0.1;
+}
+
+.custom-shadow2 {
+  box-shadow: 0px 3px 25px #00000029;
+}
+
+.phoneActive {
+  color: #1a237e;
+  background-color: white;
+  width: 100%;
+  border-radius: 0.375rem;
+}
+
+.bg-blue-bg {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(/static/img/Vector3.svg);
+}
+
+.bg-gray-bg {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(/static/img/Vector\ 2.svg);
 }

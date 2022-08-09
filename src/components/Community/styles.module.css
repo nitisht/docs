@@ -1,0 +1,117 @@
+.container {
+  padding-top: 80px;
+  margin-bottom: 100px;
+}
+
+.gridContainer {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.leftContainer {
+  grid-column: span 1 / span 1;
+}
+
+.leftInnerContainer {
+  margin-top: 16px;
+  padding-right: 20px;
+}
+
+.heading {
+  color: #1a237e;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+}
+
+.description {
+  margin: 28px 0;
+}
+
+.rightContainer {
+  grid-column: span 1 / span 1;
+  margin-top: 20px;
+}
+
+.buttonsContainer {
+  display: block;
+  width: 100%;
+  margin-top: 12px;
+  align-items: center;
+}
+
+.joinButton {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-radius: 0.375rem /* 6px */;
+  font-size: 0.75rem /* 12px */;
+  line-height: 1rem /* 16px */;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-weight: 600;
+  color: #1a237e;
+  background-color: #ff9800;
+  border: 2px solid #ff9800;
+  text-decoration: none;
+  margin-right: 20px;
+  text-decoration-line: none;
+  margin-bottom: 10px;
+}
+
+.joinButtonText {
+  color: #1a237e;
+  margin-left: 20px;
+  text-decoration: none;
+  text-decoration-line: none;
+}
+.joinButtonText:hover {
+  text-decoration: none;
+  text-decoration-line: none;
+}
+
+.gitButton {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-radius: 0.375rem /* 6px */;
+  font-size: 0.75rem /* 12px */;
+  line-height: 1rem /* 16px */;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-weight: 600;
+  color: #1a237e;
+  background-color: transparent;
+  border: 2px solid #1a237e;
+  text-decoration: none;
+  margin-right: 20px;
+  text-decoration-line: none;
+}
+
+@media (min-width: 640px) {
+  .buttonsContainer {
+    display: flex;
+  }
+  .joinButton {
+    width: auto;
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .gridContainer {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+  .leftContainer {
+    grid-column: span 3 / span 3;
+  }
+  .rightContainer {
+    grid-column: span 2 / span 2;
+    margin-top: 0px;
+  }
+}
