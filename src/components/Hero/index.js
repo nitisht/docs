@@ -21,8 +21,11 @@ const Hero = () => {
       <div className={styles.heroContainer}>
         <div className={`max-w-6xl ${styles.innerContainer}`}>
           <div className={styles.rightContainer}>
+            <div className={`${styles.noWrap} ${styles.heading}`}>
+              {"Cloud native log storage &"}
+            </div>
             <div className={styles.heading}>
-              {"Cloud native log storage & management for"}
+              {"management for"}
             </div>
             <h1 className={styles.animatedText}>
               <TextTransition springConfig={presets.gentle}>

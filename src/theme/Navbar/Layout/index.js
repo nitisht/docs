@@ -110,19 +110,28 @@ export default function NavbarLayout({ children }) {
                       />
                       <span className={styles.linkText}>Home</span>
                     </NavHashLink>
-                    <a
-                      href="https://demo.parseable.io/"
+                    {/* <a
+                      href="/docs/intro"
                       target="_blank"
                       className={styles.link}
                     >
-                      {/* <span className="flex space-x-3 items-center"> */}
                       <PlayIcon className={styles.playIcon} />
-                      <span className={styles.linkText}>Demo</span>
-                      {/* </span> */}
-                    </a>
+                      <span className={styles.linkText}>Docs</span>
+                    </a> */}
 
                     <NavHashLink
-                      to="/#features"
+                      to="/docs/intro"
+                      className={styles.link}
+                      activeClassName={styles.active}
+                    >
+                      <img
+                        height={"12px"}
+                        src={useBaseUrl("img/Icon awesome-book-open-white.svg")}
+                      />
+                      <span className={styles.linkText}>Docs</span>
+                    </NavHashLink>
+                    <NavHashLink
+                      to="/blog"
                       className={styles.link}
                       activeClassName={styles.active}
                     >
@@ -130,7 +139,7 @@ export default function NavbarLayout({ children }) {
                         height={"12px"}
                         src={useBaseUrl("img/Icon awesome-list.svg")}
                       />
-                      <span className={styles.linkText}>Features</span>
+                      <span className={styles.linkText}>Blogs</span>
                     </NavHashLink>
 
                     <NavHashLink

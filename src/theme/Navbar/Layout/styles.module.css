@@ -146,18 +146,19 @@
 .link {
   display: flex;
   align-items: center;
-  padding-left: 0.75rem /* 12px */;
-  padding-right: 0.75rem /* 12px */;
+  padding: 0 37px;
   font-size: 0.875rem /* 14px */;
   line-height: 1.25rem /* 20px */;
-  font-weight: 500;
   color: #fff;
-  height: 56px;
-  margin-right: 10px;
+  height: 62px;
+  /* margin: 0 30px; */
+  opacity: 0.8;
 }
 
 .active {
+  font-weight: 500;
   border-bottom: 4px solid #fff;
+  opacity: 1;
 }
 
 .link:hover {
@@ -165,7 +166,7 @@
 }
 .linkText {
   color: white;
-  margin-left: 5px;
+  margin-left: 9px;
 }
 
 .linkText:hover {
