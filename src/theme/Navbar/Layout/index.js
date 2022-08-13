@@ -63,7 +63,7 @@ export default function NavbarLayout({ children }) {
   const [current, setCurrent] = useState("/#");
   const location = useLocation();
 
-  // console.log(location.hash);
+  // console.log(process.env.GOOGLE_ID);
 
   // useEffect(() => { }, [current]);
 

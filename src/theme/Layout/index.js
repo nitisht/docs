@@ -12,11 +12,12 @@ import { useKeyboardNavigation } from "@docusaurus/theme-common/internal";
 import SkipToContent from "@theme/SkipToContent";
 import AnnouncementBar from "@theme/AnnouncementBar";
 import Navbar from "@theme/Navbar";
-import Footer from '@theme/Footer';
+import Footer from "@theme/Footer";
 import LayoutProvider from "@theme/Layout/Provider";
 import ErrorPageContent from "@theme/ErrorPageContent";
 import styles from "./styles.module.css";
 import { useLocation } from "@docusaurus/router";
+import Head from "@docusaurus/Head";
 
 export default function Layout(props) {
   const {
@@ -34,28 +35,52 @@ export default function Layout(props) {
   // console.log('sss',location.pathname)
 
   return (
-    <LayoutProvider>
-      <PageMetadata title={title} description={description} />
+    <>
+      <Head>
+        <script
+          strategy="lazyOnload"
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ID}`}
+        />
 
-      <SkipToContent />
+        <script strategy="lazyOnload">
+          {`
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){
+                      dataLayer.push(arguments);
+                      console.log(dataLayer);
+                    }
+                    gtag('js', new Date());
+                    gtag('config', '${process.env.GOOGLE_ID}', {
+                    page_path: window.location.pathname,
+                    });
+                `}
+        </script>
+      </Head>
+      <LayoutProvider>
+        <PageMetadata title={title} description={description} />
 
-      <AnnouncementBar />
+        <SkipToContent />
 
-      <Navbar />
+        <AnnouncementBar />
 
-      <div
-        className={clsx(
-          ThemeClassNames.wrapper.main,
-          styles.mainWrapper,
-          wrapperClassName
-        )}
-      >
-        <ErrorBoundary fallback={(params) => <ErrorPageContent {...params} />}>
-          {children}
-        </ErrorBoundary>
-      </div>
+        <Navbar />
 
-      {!noFooter && location.pathname !== '/' && <Footer />}
-    </LayoutProvider>
+        <div
+          className={clsx(
+            ThemeClassNames.wrapper.main,
+            styles.mainWrapper,
+            wrapperClassName
+          )}
+        >
+          <ErrorBoundary
+            fallback={(params) => <ErrorPageContent {...params} />}
+          >
+            {children}
+          </ErrorBoundary>
+        </div>
+
+        {!noFooter && location.pathname !== "/" && <Footer />}
+      </LayoutProvider>
+    </>
   );
 }
