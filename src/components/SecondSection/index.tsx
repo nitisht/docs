@@ -2,8 +2,8 @@ import Footer from "@theme/Footer";
 import React from "react";
 import Features from "../Features";
 import VideoSection from "../VideoSection";
-import UpcomingSection from '../UpcomingSection';
-import Community from '../Community'
+import UpcomingSection from "../UpcomingSection";
+import Community from "../Community";
 import styles from "./styles.module.css";
 
 const SecondSection = () => {
