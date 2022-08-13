@@ -160,13 +160,13 @@ export default function NavbarLayout({ children }) {
                       />
                       <span className={styles.linkText}>Community</span>
                     </Link>
-                    <Link to="/blog" className={styles.link}>
+                    {/* <Link to="/blog" className={styles.link}>
                       <img
                         height={"12px"}
                         src={useBaseUrl("img/Icon awesome-list.svg")}
                       />
                       <span className={styles.linkText}>Blogs</span>
-                    </Link>
+                    </Link> */}
 
                     {/* <NavbarItems isNavLink={true} items={navigation} /> */}
 

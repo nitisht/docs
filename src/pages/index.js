@@ -17,8 +17,6 @@ export default function Home() {
   const { siteConfig } = useDocusaurusContext();
   const location = useLocation();
 
-  // console.log(location.pathname);
-
   return (
     <>
       <Layout1
@@ -26,13 +24,9 @@ export default function Home() {
         description="Description will go into a meta tag in <head />"
       >
         <Hero />
-        {/* {location.pathname} */}
         <main>
           <SecondSection />
         </main>
-
-        {/* {location.pathname !== "/" ||
-          (location.pathname !== "/#" && <Footer />)} */}
       </Layout1>
     </>
   );
