@@ -118,17 +118,16 @@ export default function NavbarLayout({ children }) {
                   </div>
                   <div className={styles.linkContainer}>
                     <Link
-                      to="/#"
+                      to="/#features"
                       className={`${styles.link} ${
-                        current === "/#" ? styles.active : styles.nonActive
+                        current === "/#features"
+                          ? styles.active
+                          : styles.nonActive
                       }`}
-                      onClick={() => setCurrent("/#")}
+                      onClick={() => setCurrent("/#features")}
                     >
-                      <img
-                        height="12px"
-                        src={useBaseUrl("img/Icon awesome-home.svg")}
-                      />
-                      <span className={styles.linkText}>Home</span>
+                      <img height="15px" src={useBaseUrl("img/Icon.svg")} />
+                      <span className={styles.linkText}>Features</span>
                     </Link>
                     {/* <a
                       href="/docs/intro"
@@ -146,16 +145,6 @@ export default function NavbarLayout({ children }) {
                       />
                       <span className={styles.linkText}>Docs</span>
                     </Link>
-                    <Link to="/blog" className={styles.link}>
-                      <img
-                        height={"12px"}
-                        src={useBaseUrl("img/Icon awesome-list.svg")}
-                      />
-                      <span className={styles.linkText}>Blogs</span>
-                    </Link>
-
-                    {/* <NavbarItems isNavLink={true} items={navigation} /> */}
-
                     <Link
                       to="/#community"
                       className={`${styles.link} ${
@@ -171,6 +160,15 @@ export default function NavbarLayout({ children }) {
                       />
                       <span className={styles.linkText}>Community</span>
                     </Link>
+                    <Link to="/blog" className={styles.link}>
+                      <img
+                        height={"12px"}
+                        src={useBaseUrl("img/Icon awesome-list.svg")}
+                      />
+                      <span className={styles.linkText}>Blogs</span>
+                    </Link>
+
+                    {/* <NavbarItems isNavLink={true} items={navigation} /> */}
 
                     <Link
                       to="/#contact"

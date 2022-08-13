@@ -24,9 +24,7 @@ const Hero = () => {
             <div className={`${styles.noWrap} ${styles.heading}`}>
               {"Cloud native log storage &"}
             </div>
-            <div className={styles.heading}>
-              {"management for"}
-            </div>
+            <div className={styles.heading}>{"management for"}</div>
             <h1 className={styles.animatedText}>
               <TextTransition springConfig={presets.gentle}>
                 {TEXTS[index % TEXTS.length]}
@@ -39,30 +37,28 @@ const Hero = () => {
               <div>
                 <a
                   target="_blank"
-                  href={"https://launchpass.com/parseable"}
+                  href={"/docs/intro"}
                   className={styles.joinButton}
                 >
-                  <img width="20px" src="img/slack-new-logo.svg" />
-                  <span className={styles.joinButtonText}>
-                    Join our community
-                  </span>
+                  <img width="20px" src="img/Icon awesome-book-open.svg" />
+                  <span className={styles.joinButtonText}>Get Started</span>
                 </a>
               </div>
               <div>
                 <a
-                  href={"/docs/intro"}
+                  href={"https://github.com/parseablehq/parseable/stargazers"}
                   target="_blank"
                   className={styles.docsButton}
                 >
-                  <img width="20px" src="img/Icon awesome-book-open.svg" />
-                  <span className={styles.joinButtonText}>Documentation</span>
+                  <img width="20px" src="img/Icon awesome-github-alt.svg" />
+                  <span className={styles.joinButtonText}>Star on GitHub</span>
                 </a>
               </div>
             </div>
           </div>
         </div>
         <img
-          src={"img/Group 331.svg"}
+          src={"img/Group 331-1.svg"}
           className={`h-110 max-w-1/2  ${styles.heroImage}`}
         />
       </div>
@@ -76,12 +72,8 @@ const Hero = () => {
               width="56px"
               src={"img/Icon material-timer.svg"}
             />
-            <div className={styles.textWeb}>
-              Deploy in seconds
-            </div>
-            <div className={styles.textMob}>
-              Deploy in seconds
-            </div>
+            <div className={styles.textWeb}>Deploy in seconds</div>
+            <div className={styles.textMob}>Deploy in seconds</div>
           </div>
           <div className={styles.itemContainer}>
             <img
@@ -89,12 +81,8 @@ const Hero = () => {
               width="56px"
               src={"img/Icon material-donut-large.svg"}
             />
-            <div className={styles.textWeb}>
-              Fast log ingestion
-            </div>
-            <div className={styles.textMob}>
-              Fast logs ingestion
-            </div>
+            <div className={styles.textWeb}>Fast log ingestion</div>
+            <div className={styles.textMob}>Fast logs ingestion</div>
           </div>
           <div className={styles.itemContainer}>
             <img
@@ -102,12 +90,8 @@ const Hero = () => {
               width="56px"
               src={"img/Icon material-multiline-chart.svg"}
             />
-            <div className={styles.textWeb}>
-              Access and analyse logs
-            </div>
-            <div className={styles.textMob}>
-              Access and analyse logs
-            </div>
+            <div className={styles.textWeb}>Access and analyse logs</div>
+            <div className={styles.textMob}>Access and analyse logs</div>
           </div>
         </div>
       </div>
