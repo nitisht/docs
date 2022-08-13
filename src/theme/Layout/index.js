@@ -31,7 +31,7 @@ export default function Layout(props) {
 
   const location = useLocation();
 
-  console.log('sss',location.pathname)
+  // console.log('sss',location.pathname)
 
   return (
     <LayoutProvider>

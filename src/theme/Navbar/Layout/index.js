@@ -4,7 +4,7 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import React from "react";
+import React, { useEffect, useState } from "react";
 import clsx from "clsx";
 import { useThemeConfig } from "@docusaurus/theme-common";
 import {
@@ -18,18 +18,21 @@ import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import { PlayIcon } from "@heroicons/react/solid";
 import { NavHashLink } from "react-router-hash-link";
 import useBaseUrl from "@docusaurus/useBaseUrl";
-import MobileSidebar from "../MobileSidebar/Layout"
+import MobileSidebar from "../MobileSidebar/Layout";
+import { useLocation } from "@docusaurus/router";
+import NavbarItem from "@theme/NavbarItem";
+import Link from "@docusaurus/Link";
 
 const navigation = [
   {
     name: "Home",
-    href: "#",
+    href: "/#",
   },
   {
-    name: "Demo",
-    href: "https://demo.parseable.io/",
+    name: "Docs",
+    href: "/docs/intro",
   },
-  { name: "Features", href: "#features" },
+  { name: "Blogs", href: "/blog" },
   { name: "Community", href: "#community" },
   { name: "Contact", href: "#contact" },
   {
@@ -37,6 +40,10 @@ const navigation = [
     href: "https://github.com/parseablehq/parseable",
   },
 ];
+
+function classNames(...classes) {
+  return classes.filter(Boolean).join(" ");
+}
 
 function NavbarBackdrop(props) {
   return (
@@ -53,6 +60,13 @@ export default function NavbarLayout({ children }) {
   } = useThemeConfig();
   const mobileSidebar = useNavbarMobileSidebar();
   const { navbarRef, isNavbarVisible } = useHideableNavbar(hideOnScroll);
+  const [current, setCurrent] = useState("/#");
+  const location = useLocation();
+
+  // console.log(location.hash);
+
+  // useEffect(() => { }, [current]);
+
   return (
     <nav
       ref={navbarRef}
@@ -87,29 +101,35 @@ export default function NavbarLayout({ children }) {
                 </div>
                 <div className={styles.itemsContainer}>
                   <div className={styles.logoContainer}>
-                    <img
-                      className={styles.logoMob}
-                      src={useBaseUrl("img/Component 19 – 1.svg")}
-                      alt="Workflow"
-                    />
-                    <img
-                      className={styles.logoWeb}
-                      src={useBaseUrl("img/Component 19 – 1.svg")}
-                      alt="Workflow"
-                    />
+                    <a href="/">
+                      <img
+                        className={styles.logoMob}
+                        src={useBaseUrl("img/Component 19 – 1.svg")}
+                        alt="Workflow"
+                      />
+                    </a>
+                    <a href="/">
+                      <img
+                        className={styles.logoWeb}
+                        src={useBaseUrl("img/Component 19 – 1.svg")}
+                        alt="Workflow"
+                      />
+                    </a>
                   </div>
                   <div className={styles.linkContainer}>
-                    <NavHashLink
-                      to="/"
-                      className={styles.link}
-                      activeClassName={styles.active}
+                    <Link
+                      to="/#"
+                      className={`${styles.link} ${
+                        current === "/#" ? styles.active : styles.nonActive
+                      }`}
+                      onClick={() => setCurrent("/#")}
                     >
                       <img
                         height="12px"
                         src={useBaseUrl("img/Icon awesome-home.svg")}
                       />
                       <span className={styles.linkText}>Home</span>
-                    </NavHashLink>
+                    </Link>
                     {/* <a
                       href="/docs/intro"
                       target="_blank"
@@ -119,54 +139,58 @@ export default function NavbarLayout({ children }) {
                       <span className={styles.linkText}>Docs</span>
                     </a> */}
 
-                    <NavHashLink
-                      to="/docs/intro"
-                      className={styles.link}
-                      activeClassName={styles.active}
-                    >
+                    <Link to="/docs/intro" className={styles.link}>
                       <img
                         height={"12px"}
                         src={useBaseUrl("img/Icon awesome-book-open-white.svg")}
                       />
                       <span className={styles.linkText}>Docs</span>
-                    </NavHashLink>
-                    <NavHashLink
-                      to="/blog"
-                      className={styles.link}
-                      activeClassName={styles.active}
-                    >
+                    </Link>
+                    <Link to="/blog" className={styles.link}>
                       <img
                         height={"12px"}
                         src={useBaseUrl("img/Icon awesome-list.svg")}
                       />
                       <span className={styles.linkText}>Blogs</span>
-                    </NavHashLink>
+                    </Link>
 
-                    <NavHashLink
+                    {/* <NavbarItems isNavLink={true} items={navigation} /> */}
+
+                    <Link
                       to="/#community"
-                      className={styles.link}
-                      activeClassName={styles.active}
+                      className={`${styles.link} ${
+                        current === "#community"
+                          ? styles.active
+                          : styles.nonActive
+                      }`}
+                      onClick={() => setCurrent("#community")}
                     >
                       <img
                         src={useBaseUrl("img/Icon ionic-ios-people.svg")}
                         height="12px"
                       />
                       <span className={styles.linkText}>Community</span>
-                    </NavHashLink>
+                    </Link>
 
-                    <NavHashLink
+                    <Link
                       to="/#contact"
-                      className={styles.link}
-                      activeClassName={styles.active}
+                      // className={styles.link}
+                      // activeClassName={styles.active}
+                      className={`${styles.link} ${
+                        current === "#contact"
+                          ? styles.active
+                          : styles.nonActive
+                      }`}
+                      onClick={() => setCurrent("#contact")}
                     >
                       <img
                         height="12px"
                         src={useBaseUrl("img/Icon ionic-ios-mail.svg")}
                       />
                       <span className={styles.linkText}>Contact</span>
-                    </NavHashLink>
-                    <a
-                      href="https://github.com/parseablehq/parseable"
+                    </Link>
+                    <Link
+                      to="https://github.com/parseablehq/parseable"
                       target="_blank"
                       className={styles.gitLink}
                     >
@@ -178,7 +202,7 @@ export default function NavbarLayout({ children }) {
                           )}
                         />
                       </span>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -211,11 +235,11 @@ export default function NavbarLayout({ children }) {
                         {item.name}
                       </a>
                     ) : (
-                      <NavHashLink to={item.href} activeClassName="phoneActive">
+                      <a href={item.href} activeClassName="phoneActive">
                         <span className="h-10 w-full px-3 text-white inline-flex items-center">
                           {item.name}
                         </span>
-                      </NavHashLink>
+                      </a>
                     )}
                   </Disclosure.Button>
                 ))}

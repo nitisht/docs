@@ -17,7 +17,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <div id={""} className={styles.container}>
+    <div id={"#"} className={styles.container}>
       <div className={styles.heroContainer}>
         <div className={`max-w-6xl ${styles.innerContainer}`}>
           <div className={styles.rightContainer}>

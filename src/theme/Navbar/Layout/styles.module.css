@@ -155,11 +155,11 @@
   opacity: 0.8;
 }
 
-.active {
+/* .active {
   font-weight: 500;
   border-bottom: 4px solid #fff;
   opacity: 1;
-}
+} */
 
 .link:hover {
   text-decoration-line: none;
